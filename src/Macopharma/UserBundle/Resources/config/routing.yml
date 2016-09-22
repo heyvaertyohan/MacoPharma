@@ -1,0 +1,5 @@
+user_admin_user:
+    resource: "@MacopharmaUserBundle/Resources/config/routing/user.yml"
+    prefix:   /admin/user
+
+

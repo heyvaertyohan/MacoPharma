@@ -1,0 +1,58 @@
+{% extends 'MacopharmaMacopharmaBundle::layoutFrondEnd.html.twig' %}
+
+{% block productCategoryMenu %}
+    {% include ('MacopharmaMacopharmaBundle:FrontEnd/Category:list.html.twig') %}
+{% endblock %}
+
+{% block basketMenu %}
+    {% include ('MacopharmaMacopharmaBundle:FrontEnd/Basket:menu.html.twig') %}
+{% endblock %}
+
+{% block userMenu %}
+    {% include ('MacopharmaUserBundle:User:menu.html.twig') %}
+{% endblock %}
+
+{% block searchMenu %}
+    {% include ('MacopharmaMacopharmaBundle:FrontEnd/Product:recherche.html.twig') %}
+{% endblock %}
+
+
+{% block pagecontain %}
+
+        <div class="span9">
+                <div class="row">
+                    <div class="span5">
+                        <img src="{{ asset(produit.media.path) }}" alt="{{ produit.media.description }}" width="470" height="310">
+                    </div>
+
+                    <div class="span4">
+                        <h4>{{ produit.name }}</h4>
+
+                        <p>{{ produit.description }}</p>
+                        <h4>{{ produit.prix }} €</h4>
+
+                        <form action="panier.php">
+
+                            <select name="qte" class="span1">
+                                <option>1</option>
+                            </select>
+
+                            <div>
+                                {% if basket[produit.id] is not defined %}
+                                <button class="btn btn-primary" href="{{ path('basket_add', {slug:produit.slug} ) }}">Ajouter au panier</button>
+                                {% else %}
+                                <button class="btn btn-primary">Ce produit est déjà dans le panier</button>
+                                {% endif %}
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+

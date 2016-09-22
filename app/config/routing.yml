@@ -1,3 +1,21 @@
+macopharma_core:
+    resource: "@MacopharmaMacopharmaBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}
+    defaults: { _locale: "%locale%" }
+    requirements:
+        _locale: fr|en
+
+Macopharma:
+    resource: "@MacopharmaMacopharmaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+Macopharma_user:
+    resource: "@MacopharmaMacopharmaBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

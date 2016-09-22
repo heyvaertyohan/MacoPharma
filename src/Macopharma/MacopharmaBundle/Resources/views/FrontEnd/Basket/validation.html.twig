@@ -1,0 +1,70 @@
+{% extends 'MacopharmaMacopharmaBundle::layoutFrondEnd.html.twig' %}
+
+
+{% block header %}
+    {{ parent() }}
+{% endblock  %}
+
+{% block productCategoryMenu %}
+    {% include ('MacopharmaMacopharmaBundle:FrontEnd/Category:list.html.twig') %}
+{% endblock %}
+
+{% block pagecontain %}
+    <div class="span9">
+        <h2>Valider mon panier</h2>
+
+        <form action="{{ path('livraison_validation', {'id' : order.id}) }}">
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Références</th>
+                    <th>Quantité</th>
+                    <th>Prix unitaire</th>
+                    <th>Total HT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>AB29837</td>
+                    <td>
+                        2
+                    </td>
+                    <td>333,33€</td>
+                    <td>333,33€</td>
+                </tr>
+                <tr>
+                    <td>AC34423</td>
+                    <td>
+                        1
+                    </td>
+                    <td>333,33€</td>
+                    <td>666,66€</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <dl class="dl-horizontal pull-right">
+                <dt>Total HT :</dt>
+                <dd>799,99€</dd>
+
+                <dt>TVA :</dt>
+                <dd>200€</dd>
+
+                <dt>Total:</dt>
+                <dd>999,99€ TTC</dd>
+            </dl>
+            <div class="clearfix"></div>
+
+            <a href="{{ path('basket_delivery') }}" class="btn btn-primary pull-left">Retour</a>
+
+            <button type="submit" class="btn btn-success pull-right">Payer</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+
+
+

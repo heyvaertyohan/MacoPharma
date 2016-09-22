@@ -1,0 +1,36 @@
+products_list:
+    path:     /
+    defaults: { _controller: MacopharmaMacopharmaBundle:FrontEnd/Product:list }
+
+products_list_Category:
+    path:     /Category/{slug}
+    defaults: { _controller: MacopharmaMacopharmaBundle:FrontEnd/Product:list }
+
+product_search:
+    path:     /recherche
+    defaults: { _controller: MacopharmaMacopharmaBundle:FrontEnd/Product:search }
+
+product_read:
+    path:     /read/{slug}
+    defaults: { _controller: MacopharmaMacopharmaBundle:FrontEnd/Product:read }
+
+basket:
+    path:     /basket
+    defaults: { _controller: MacopharmaMacopharmaBundle:FrontEnd/Basket:list }
+    path:     /basket/livraison
+
+basket_delivery:
+    path:    /basket/delivery
+    defaults: { _controller: MacopharmaMacopharmaBundle:FrontEnd/Basket:delivery }
+
+basket_validation:
+    path:     /basket/validation
+    defaults: { _controller: MacopharmaMacopharmaBundle:FrontEnd/Basket:validation }
+
+basket_add:
+    path:     /basket/add/{slug}
+    defaults: { _controller: MacopharmaMacopharmaBundle:FrontEnd/Basket:add }
+
+basket_delete:
+    path:     /basket/delete/{slug}
+    defaults: { _controller: MacopharmaMacopharmaBundle:FrontEnd/Basket:delete }
