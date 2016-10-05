@@ -17,14 +17,39 @@ class MediaData extends AbstractFixture implements OrderedFixtureInterface
 
         $tab_Medias = array(
             array(
-                "name" => "vista-omega-3",
-                "description" => "image vista-omega-3.jpg",
-                "path" => "bundles/MacopharmaMacopharma/images/vista-omega-3.jpg",
-            ),
-            array(
                 "name" => "Omega-3",
                 "description" => "image omega 3",
                 "path" => "bundles/MacopharmaMacopharma/images/Omega-3.jpg",
+            ),
+            array(
+                "name" => "vista-omega-3",
+                "description" => "image vista omega 3",
+                "path" => "bundles/MacopharmaMacopharma/images/vista-omega-3.jpg",
+            ),
+            array(
+                "name" => "pg-pharmagenerix-omega-3-pg-150-gelules",
+                "description" => "image pg pharmagenerix omega 3",
+                "path" => "bundles/MacopharmaMacopharma/images/pg-pharmagenerix-omega-3-pg-150-gelules.jpg",
+            ),
+            array(
+                "name" => "biover-omega-3-capsules-80",
+                "description" => "mage biover omega 3",
+                "path" => "bundles/MacopharmaMacopharma/images/biover-omega-3-capsules-80.jpg",
+            ),
+            array(
+                "name" => "pg-pharmagenerix-omega-3-50-gelules",
+                "description" => "image pg pharmagenerix omega 3",
+                "path" => "bundles/MacopharmaMacopharma/images/pg-pharmagenerix-omega-3-50-gelules.jpg",
+            ),
+            array(
+                "name" => "omega-3-vegetal-60-capsules",
+                "description" => "image omega 3 vegetal",
+                "path" => "bundles/MacopharmaMacopharma/images/omega-3-vegetal-60-capsules.jpg",
+            ),
+            array(
+                "name" => "damhert-omega-3-capsules-30",
+                "description" => "image damhert omega 3",
+                "path" => "bundles/MacopharmaMacopharma/images/damhert-omega-3-capsules-30.jpg",
             ),
             array(
                 "name" => "Vitamine",

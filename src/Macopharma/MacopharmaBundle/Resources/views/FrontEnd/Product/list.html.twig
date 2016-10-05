@@ -20,12 +20,13 @@
 
     <div class="span9">
 
+
         <ul class="thumbnails">
 
             {% for produit in products_list %}
             <li class="span3">
                 <div class="thumbnail">
-                    <img src="{{ asset(produit.media.path) }}" alt="{{ produit.description }}" width="300" height="300">
+                    <img src="{{ asset(produit.media.path) }}" alt="{{ produit.media.description }}" width="300" height="300">
 
                     <div class="caption">
                         <h4>{{ produit.name }}</h4>
