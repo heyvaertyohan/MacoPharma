@@ -1,0 +1,11 @@
+<div class="well">
+    <ul class="nav nav-list">
+        <li class="nav-header">{{ 'Categories' |trans }}</li>
+
+        {% for Category in list_Categorys %}
+            <li>
+                <a href="{{ path('products_list_Category', {slug:Category.slug}) }}">{{ Category.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

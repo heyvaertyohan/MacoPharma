@@ -39,10 +39,7 @@ class ProductController extends Controller
             throw $this->createNotFoundException("No categories list  find!!");
         }
 
-        /*$form = $this->createForm(new SearchType());*/
         $form = $this->createForm(SearchType::class);
-
-       /* $products_list = $this->get('knp_paginator')->paginate($products_list,$this->get('request')->query->get('page', 1),3);*/
 
         return $this->render('MacopharmaMacopharmaBundle:FrontEnd/Product:list.html.twig', array(
             'list_Categorys' => $this->list_Categorys,

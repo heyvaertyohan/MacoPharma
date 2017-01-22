@@ -1,0 +1,68 @@
+{% extends 'MacopharmaMacopharmaBundle::layoutFrondEnd_base.html.twig' %}
+
+{% block productCategoryMenu %}
+    {% include ('MacopharmaMacopharmaBundle:FrontEnd/Category:list.html.twig') %}
+{% endblock %}
+
+{% block basketMenu %}
+    {% include ('MacopharmaMacopharmaBundle:FrontEnd/Basket:menu.html.twig') %}
+{% endblock %}
+
+{% block userMenu %}
+    {% include ('MacopharmaUserBundle:User:menu.html.twig') %}
+{% endblock %}
+
+{% block searchMenu %}
+    {% include ('MacopharmaMacopharmaBundle:FrontEnd/Product:recherche.html.twig') %}
+{% endblock %}
+
+{% block pagecontain %}
+
+    <div class="span9">
+
+        <ul class="thumbnails">
+
+            {% for produit in products_list %}
+            <li class="span3">
+                <div class="thumbnail">
+                    <img src="{{ asset(produit.media.path) }}" alt="{{ produit.media.description }}" width="300" height="300">
+
+                    <div class="caption">
+                        <h4>{{ produit.name }}</h4>
+                        {#{% if produit.tva.valeur is not null %}
+                        <p>{{ produit.prix|tva(produit.tva.multiplicate) }} €</p>
+                        {% endif %}#}
+
+                        <td>
+                            <a class="btn btn-primary" href="{{ path('product_read', {slug:produit.slug} ) }} ">Plus d'infos</a>
+
+                            {% if basket[produit.id] is not defined   %}
+                            <a class="btn btn-success" href="{{ path('basket_add', {slug:produit.slug} ) }}">Ajouter au panier</a>
+                            {% endif %}
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+
+        </ul>
+
+        {% if products_list|length  == 0 %}
+            <div class="navigation">
+                <h1>{{ 'No product in the basket!' |trans }}</h1>
+            </div>
+        {#{% else %}
+            <div class="navigation">
+                {{ knp_pagination_render(products_list) }}
+            </div>#}
+        {% endif %}
+
+
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {{ parent() }}
+{% endblock %}
+
+
+
